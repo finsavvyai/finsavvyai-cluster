@@ -1,0 +1,299 @@
+.App {
+  text-align: center;
+  background: #1a1a1a;
+  color: #ffffff;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Title Bar */
+.title-bar {
+  background: #2d2d2d;
+  padding: 8px;
+  border-bottom: 1px solid #404040;
+  -webkit-app-region: drag;
+}
+
+.title-bar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 8px;
+}
+
+.title-bar-controls {
+  display: flex;
+  gap: 8px;
+  -webkit-app-region: no-drag;
+}
+
+.title-bar-controls button {
+  width: 20px;
+  height: 20px;
+  border: none;
+  border-radius: 50%;
+  background: #404040;
+  color: white;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.title-bar-controls button:hover {
+  background: #555;
+}
+
+/* Tab Navigation */
+.tab-nav {
+  display: flex;
+  background: #2d2d2d;
+  border-bottom: 1px solid #404040;
+}
+
+.tab-nav button {
+  flex: 1;
+  padding: 12px;
+  background: transparent;
+  border: none;
+  color: #888;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.tab-nav button:hover {
+  background: #333;
+  color: #fff;
+}
+
+.tab-nav button.active {
+  background: #404040;
+  color: #fff;
+  border-bottom: 2px solid #007acc;
+}
+
+/* Tab Content */
+.tab-content {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Chat Styles */
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.message {
+  text-align: left;
+  padding: 12px;
+  border-radius: 8px;
+  max-width: 85%;
+}
+
+.message.user {
+  background: #007acc;
+  align-self: flex-end;
+  color: white;
+}
+
+.message.assistant {
+  background: #404040;
+  align-self: flex-start;
+}
+
+.message.system {
+  background: #8b4513;
+  align-self: center;
+  color: #fff;
+}
+
+.message-content {
+  margin-top: 8px;
+  white-space: pre-wrap;
+  line-height: 1.4;
+}
+
+.chat-input {
+  padding: 16px;
+  border-top: 1px solid #404040;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.model-select {
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #555;
+  background: #333;
+  color: white;
+}
+
+.message-input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #555;
+  background: #333;
+  color: white;
+  font-size: 14px;
+}
+
+.message-input:focus {
+  outline: none;
+  border-color: #007acc;
+}
+
+.send-button, .clear-button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.send-button {
+  background: #007acc;
+  color: white;
+}
+
+.send-button:hover:not(:disabled) {
+  background: #005a9e;
+}
+
+.send-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.clear-button {
+  background: #666;
+  color: white;
+}
+
+.clear-button:hover {
+  background: #777;
+}
+
+/* Cluster Styles */
+.cluster-info {
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.status-card {
+  background: #2d2d2d;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+  border-left: 4px solid #007acc;
+}
+
+.status-card h4 {
+  margin: 0 0 12px 0;
+  color: #007acc;
+}
+
+.status-card p {
+  margin: 8px 0;
+  color: #ccc;
+}
+
+.status-healthy {
+  color: #4caf50 !important;
+}
+
+.status-unhealthy {
+  color: #f44336 !important;
+}
+
+.quick-actions {
+  background: #2d2d2d;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.quick-actions h4 {
+  margin: 0 0 12px 0;
+  color: #007acc;
+}
+
+.quick-actions button {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  background: #007acc;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.quick-actions button:hover {
+  background: #005a9e;
+}
+
+/* Models Styles */
+.models-info {
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.models-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.model-card {
+  background: #2d2d2d;
+  border-radius: 8px;
+  padding: 16px;
+  border-left: 4px solid #007acc;
+  text-align: left;
+}
+
+.model-card h4 {
+  margin: 0 0 8px 0;
+  color: #007acc;
+}
+
+.model-card p {
+  margin: 4px 0;
+  color: #ccc;
+}
+
+.no-models {
+  text-align: center;
+  padding: 40px;
+  color: #888;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #404040;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
